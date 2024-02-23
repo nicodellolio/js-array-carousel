@@ -13,25 +13,49 @@
             
         <style>
 
-            img{
-                display: none;
-            }
-            img.active{
-                display: block;
-            }
-
-            .slider{
-                position: relative;
+            
+            .slider{   
+                background-color: #333;     
                 display: flex;
-                justify-content: center;
-
-                & img{
-                    width: 100%;
+                justify-content: center;   
+                align-items: center; 
+                max-height: 2150px;
+                .slides{
+                    img{
+                        display: none;
+                    }
+                    img.active{
+                        display: block;
+                    }
                 }
+
+                .thumb_container{
+                    position: relative;
+                    width: 300px;
+                    height: 2150px;
+
+
+                    img{
+                        flex-grow: 1;
+                        width: 500px;
+                        /* display: none; */
+                    }
+                    /* img.active{
+                        display: block;
+                    } */
+                }
+
+                & .slides > img{
+                    width: 100%;
+                    height: 2150px;
+                    object-fit: cover;
+                    object-position: 75% 50%;
+                }
+
                 & button{
                     font-size: 4rem;
                     position: absolute;
-                    right: 50%;
+                    right: 0;
 
                     & i{
                         border-radius: 100%;
@@ -41,7 +65,7 @@
                     top: 4rem;
                 }
                 .next{
-                    bottom: 1rem;
+                    bottom: 2rem;
                 }
 
             }
@@ -51,19 +75,30 @@
 
     <body>
 
-        <div class="slider">
-            <div class="slides w-75 mx-auto mt-5">
+        <div class="slider ">
+            <div class="slides w-75">
+            </div>
+            
+            <div class="thumb_container d-flex flex-column">
+
+                <img src="./assets/img/01.webp" alt="">
+                <img src="./assets/img/02.webp" alt="">
+                <img src="./assets/img/03.webp" alt="">
+                <img src="./assets/img/04.webp" alt="">
+                <img src="./assets/img/05.webp" alt="">
+                
+                <div class="controls">
+                    <button class="previous border-0 bg-transparent text-light ">
+                        <i class="fa fa-circle-arrow-up"></i>
+                    </button>
+    
+                    <button class="next border-0 bg-transparent text-light ">
+                        <i class="fa fa-circle-arrow-down"></i>
+                    </button>
+                </div>
             </div>
 
-            <div class="controls">
-                <button class="previous border-0 bg-transparent text-light ">
-                    <i class="fa fa-circle-arrow-up"></i>
-                </button>
-
-                <button class="next border-0 bg-transparent text-light ">
-                    <i class="fa fa-circle-arrow-down"></i>
-                </button>
-            </div>
+           
         </div>
 
 
