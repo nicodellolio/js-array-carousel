@@ -26,6 +26,7 @@ const nextElement = document.querySelector('.next')
 // console.log(prevElement, nextElement);
 
 
+// creiamo un ciclo per passare in rassegna le immagini dell'array
 
 for (let i = 0; i < slides.length; i++) {
     const slide = slides[i];
@@ -38,17 +39,47 @@ for (let i = 0; i < slides.length; i++) {
     slidesElement.insertAdjacentHTML('beforeend', imageMarkup);
 }
 
+
+//aggiungiamo l'event listner ai bottoni per il prev ed il next
 prevElement.addEventListener('click', function () {
     console.log('slide to the previous image');
+
+    //decrementiamo l'iterazione ad ogni click
+    activeSlide--
+
+    //togliamo la classe active prima di aggiungerla a quella successiva
+    const currentSlide = document.querySelector('img.active')
+    console.log(currentSlide);
+
+    currentSlide.classList.remove('active')
+
+    //diamo la classe active alle successive iterazioni
+    const allSlides = document.querySelectorAll('.slides img')
+    // console.log(allSlides);
+
+    allSlides[activeSlide].classList.add('active')
 } )
 
 nextElement.addEventListener('click', function () {
     console.log('slide to the next image');
 
-    activeSlide ++
-    console.log(activeSlide);
+    //incrementiamo l'iterazione ad ogni click
+    activeSlide++
 
+    //togliamo la classe active prima di aggiungerla a quella successiva
+    const currentSlide = document.querySelector('img.active')
+    console.log(currentSlide);
+
+    currentSlide.classList.remove('active')
+
+    //diamo la classe active alle successive iterazioni
+    const allSlides = document.querySelectorAll('.slides img')
+    // console.log(allSlides);
+
+    allSlides[activeSlide].classList.add('active')
 } )
+
+
 
 
 

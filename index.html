@@ -12,14 +12,19 @@
             
             
         <style>
+
+            img{
+                display: none;
+            }
+            img.active{
+                display: block;
+            }
+
             .slider{
                 position: relative;
 
                 & img{
                     width: 100%;
-                }
-                & img :not(.active){
-                    display: none;
                 }
                 & button{
                     font-size: 4rem;
