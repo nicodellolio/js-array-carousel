@@ -47,6 +47,10 @@ prevElement.addEventListener('click', function () {
     //decrementiamo l'iterazione ad ogni click
     activeSlide--
 
+    if (activeSlide < 0) {
+        activeSlide = slides.length -1
+    }
+
     //togliamo la classe active prima di aggiungerla a quella successiva
     const currentSlide = document.querySelector('img.active')
     console.log(currentSlide);
@@ -65,6 +69,10 @@ nextElement.addEventListener('click', function () {
 
     //incrementiamo l'iterazione ad ogni click
     activeSlide++
+
+    if (activeSlide > slides.length -1) {
+        activeSlide = 0
+    }
 
     //togliamo la classe active prima di aggiungerla a quella successiva
     const currentSlide = document.querySelector('img.active')
